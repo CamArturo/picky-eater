@@ -305,7 +305,8 @@ html {
   box-sizing: inherit; }
 
 body {
-  background-image: url("../../../assets/witewall_3.png"); }
+  background-image: url("../../../assets/witewall_3.png");
+  font-family: 'Catamaran', sans-serif; }
 
 .d-flex {
   display: flex; }
