@@ -1,0 +1,24 @@
+header {
+  height: 100px; }
+  header img {
+    width: 300px;
+    height: 40px;
+    margin: 30px 0 0 100px; }
+
+/* Large Devices, Wide Screens */
+/* Medium Devices, Desktops */
+/* Small Devices, Tablets */
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    header img {
+      width: 300px;
+      height: 40px;
+      margin: 0;
+      padding: 0 20px; } }
+/* Custom, iPhone Retina */
+
+/*# sourceMappingURL=Header.css.map */
