@@ -1,0 +1,64 @@
+.hero-container {
+  height: 500px;
+  width: 100%;
+
+  background-image: url("../../../assets/restaurant-food.jpg");
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .inner {
+
+    h2 {
+      font-family: Signika Negative, serif;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 56px;
+      font-size: 36px;
+      letter-spacing: 0.04em;
+      margin: 0;
+
+      color: #FCFBFB;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    }
+    button {
+      width: 180px;
+      height: 40px;
+      font-family: Catamaran, serif;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 37px;
+      letter-spacing: 2px;
+      color: #fff;
+      background-color: #0956B2;
+      border: none;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+
+}
