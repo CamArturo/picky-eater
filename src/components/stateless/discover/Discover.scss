@@ -1,0 +1,45 @@
+.discover-info {
+  h3 {
+    font-family: Signika Negative, serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 38px;
+    font-size: 24px;
+    letter-spacing: 0.04em;
+    margin: 0;
+    text-align: center;
+
+    color: #353131;
+    // 0956B2
+  }
+  .infographics {
+    justify-content: space-around;
+    margin: 20px 0 0 0;
+    padding-bottom: 100px;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+
+}
