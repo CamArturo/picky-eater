@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from '../../../logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -17,5 +17,8 @@ class App extends Component {
     );
   }
 }
+
+// TODO Redux architect - keep data flat and not duplicating
+// TODO testing mapstate to props and for every container - test that it returns the object
 
 export default App;
