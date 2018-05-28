@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from '../header/Header';
 import Hero from '../hero/Hero';
+import Discover from '../discover/Discover';
+import { Route } from 'react-router-dom';
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Header/>
-        <Hero/>
+        {/*<Route exact path="location" component={locationSearch}/>*/}
+        <Route exact path="/" component={Hero}/>
+        <Route exact path="/" component={Discover}/>
       </div>
     );
   }
