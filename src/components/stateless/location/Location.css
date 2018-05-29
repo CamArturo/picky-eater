@@ -1,18 +1,18 @@
 .location-container .location-container-header {
   background-image: url("../../../assets/denver-1200-200.jpg");
   height: 200px; }
-.location-container h2 {
-  font-family: Signika Negative, serif;
-  font-style: normal;
-  font-weight: bold;
-  line-height: 56px;
-  font-size: 36px;
-  letter-spacing: 0.04em;
-  text-align: center;
-  padding: 48px 0 0 0;
-  margin: 0;
-  color: #fff;
-  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25); }
+  .location-container .location-container-header h2 {
+    font-family: Signika Negative, serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 56px;
+    font-size: 36px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    padding: 48px 0 0 0;
+    margin: 0;
+    color: #fff;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25); }
 .location-container h3 {
   text-align: center;
   font-family: Signika Negative, serif;
@@ -24,7 +24,7 @@
 .location-container .login-form {
   text-align: center;
   width: 400px;
-  padding: 30px 0 0;
+  padding: 30px 0 30px;
   margin: auto; }
   .location-container .login-form input {
     text-align: left;
@@ -50,6 +50,19 @@
     cursor: pointer; }
     .location-container .login-form button:hover, .location-container .login-form button:active, .location-container .login-form button:focus {
       background: #1468cc; }
+.location-container .locations-container {
+  padding-bottom: 60px; }
+  .location-container .locations-container button {
+    background-color: #0956B2;
+    width: 300px;
+    height: 128px;
+    font-family: Signika Negative, serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 38px;
+    font-size: 24px;
+    letter-spacing: 0.04em;
+    color: #fff; }
 
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
