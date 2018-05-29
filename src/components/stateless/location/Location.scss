@@ -1,0 +1,116 @@
+.location-container {
+  .location-container-header {
+    background-image: url("../../../assets/denver-1200-200.jpg");
+    height: 200px;
+    h2 {
+      font-family: Signika Negative, serif;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 56px;
+      font-size: 36px;
+      letter-spacing: 0.04em;
+      text-align: center;
+      padding: 48px 0 0 0;
+      margin: 0;
+
+      color: #fff;
+      text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+  h3 {
+    text-align: center;
+    font-family: Signika Negative, serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 28px;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+  }
+  .login-form {
+    text-align: center;
+    width: 400px;
+    padding: 30px 0 30px;
+    margin: auto;
+    input {
+      text-align: left;
+      color: #353131;
+      outline: 0;
+      background: #f2f2f2;
+      width: 80%;
+      border: 0;
+      margin: 0 0 15px;
+      padding: 13px 13px 13px 20px;
+      font-size: 1rem;
+    }
+    button {
+      text-transform: uppercase;
+      outline: 0;
+      background: #0956b2;
+      width: 20%;
+      border: 0;
+      padding: 13px;
+      color: #fff;
+      font-size: 1rem;
+      -webkit-transition: all 0.3 ease;
+      transition: all 0.3 ease;
+      cursor: pointer;
+      &:hover,
+      &:active,
+      &:focus {
+        background: #1468cc;
+      }
+    }
+  }
+  .locations-container {
+    padding-bottom: 60px;
+    button {
+      background-color: #0956B2;
+      width: 300px;
+      height: 128px;
+
+      font-family: Signika Negative, serif;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 38px;
+      font-size: 24px;
+      letter-spacing: 0.04em;
+
+      color: #fff;
+    }
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .location-container {
+    .login-form {
+      width: 90%;
+      input {
+        width: 70%;
+      }
+      button {
+        width: 30%;
+      }
+    }
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+
+}
