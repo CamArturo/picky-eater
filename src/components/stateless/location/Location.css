@@ -1,0 +1,67 @@
+.location-container .location-container-header {
+  background-image: url("../../../assets/denver-1200-200.jpg");
+  height: 200px; }
+.location-container h2 {
+  font-family: Signika Negative, serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 56px;
+  font-size: 36px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 48px 0 0 0;
+  margin: 0;
+  color: #fff;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25); }
+.location-container h3 {
+  text-align: center;
+  font-family: Signika Negative, serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 28px;
+  font-size: 20px;
+  letter-spacing: 0.04em; }
+.location-container .login-form {
+  text-align: center;
+  width: 400px;
+  padding: 30px 0 0;
+  margin: auto; }
+  .location-container .login-form input {
+    text-align: left;
+    color: #353131;
+    outline: 0;
+    background: #f2f2f2;
+    width: 80%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 13px 13px 13px 20px;
+    font-size: 1rem; }
+  .location-container .login-form button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #0956b2;
+    width: 20%;
+    border: 0;
+    padding: 13px;
+    color: #fff;
+    font-size: 1rem;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer; }
+    .location-container .login-form button:hover, .location-container .login-form button:active, .location-container .login-form button:focus {
+      background: #1468cc; }
+
+/* Large Devices, Wide Screens */
+/* Medium Devices, Desktops */
+/* Small Devices, Tablets */
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .location-container .login-form {
+    width: 90%; }
+    .location-container .login-form input {
+      width: 70%; }
+    .location-container .login-form button {
+      width: 30%; } }
+/* Custom, iPhone Retina */
+
+/*# sourceMappingURL=Location.css.map */
