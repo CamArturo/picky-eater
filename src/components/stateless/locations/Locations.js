@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
 class Locations extends Component {
 
@@ -20,8 +19,6 @@ class Locations extends Component {
     );
   }
 }
-
-
 
 const mapStateToProps = (state) => ({
   locations: state.locations
