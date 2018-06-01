@@ -6,7 +6,6 @@ import Discover from '../discover/Discover';
 import locationSearch from '../location/Location';
 import { Route } from 'react-router-dom';
 
-
 class App extends Component {
   render() {
     return (

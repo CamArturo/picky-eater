@@ -8,7 +8,6 @@ const Location = () => {
   return (
     <section className="location-container">
       <LocationInput/>
-      {/*<LocationInput getCities={getCities} />*/}
       <Locations />
     </section>
   );
