@@ -15,10 +15,7 @@ class LocationInput extends Component {
 
   storeCities = async (userInput) => {
     const cities = await getCities(userInput);
-    // console.log(cities.location_suggestions)
-    //
     this.props.loadLocations(cities.location_suggestions)
-    // loadLocations(cities.location_suggestions)
   };
 
   render () {
@@ -29,7 +26,6 @@ class LocationInput extends Component {
         </section>
         <section className="locations">
           <h3>Confirm your city</h3>
-          {/*<form onClick={() => this.props.getCities(this.state.userInput)} className="login-form">*/}
           <form onClick={() => this.storeCities(this.state.userInput)} className="login-form">
             <input
               type="text"
@@ -53,11 +49,8 @@ LocationInput.propTypes = {
 //   locations: state.locations
 // });
 
-//
 const mapDispatchToProps = (dispatch) => ({
   loadLocations: (cities) => dispatch(sendLocationsToStore(cities))
 });
 
-// Component
 export default connect(null, mapDispatchToProps)(LocationInput);
-// export default LocationInput;

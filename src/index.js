@@ -10,7 +10,6 @@ import './index.css';
 import App from './components/stateless/app/App';
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
-// ReactDOM.render(<App />, document.getElementById('root'));
 const application = (
   <Provider store={store}>
     <Router>
