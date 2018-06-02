@@ -67,16 +67,19 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <button
+          className="location-btn"
           onClick={[Function]}
 >
           Newton Grove, NC
 </button>,
         <button
+          className="location-btn"
           onClick={[Function]}
 >
           Newton, IL
 </button>,
         <button
+          className="location-btn"
           onClick={[Function]}
 >
           Newton, MS
@@ -92,6 +95,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Newton Grove, NC",
+          "className": "location-btn",
           "onClick": [Function],
         },
         "ref": null,
@@ -104,6 +108,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Newton, IL",
+          "className": "location-btn",
           "onClick": [Function],
         },
         "ref": null,
@@ -116,6 +121,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Newton, MS",
+          "className": "location-btn",
           "onClick": [Function],
         },
         "ref": null,
@@ -133,16 +139,19 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <button
+            className="location-btn"
             onClick={[Function]}
 >
             Newton Grove, NC
 </button>,
           <button
+            className="location-btn"
             onClick={[Function]}
 >
             Newton, IL
 </button>,
           <button
+            className="location-btn"
             onClick={[Function]}
 >
             Newton, MS
@@ -158,6 +167,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Newton Grove, NC",
+            "className": "location-btn",
             "onClick": [Function],
           },
           "ref": null,
@@ -170,6 +180,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Newton, IL",
+            "className": "location-btn",
             "onClick": [Function],
           },
           "ref": null,
@@ -182,6 +193,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Newton, MS",
+            "className": "location-btn",
             "onClick": [Function],
           },
           "ref": null,
