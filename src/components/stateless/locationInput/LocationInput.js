@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { getCities } from '../../../api/Api';
 import { sendLocationsToStore } from '../../../actions/loadLocations';
 import { connect } from 'react-redux';
@@ -26,14 +25,15 @@ class LocationInput extends Component {
         </section>
         <section className="locations">
           <h3>Confirm your city</h3>
-          <form onClick={() => this.storeCities(this.state.userInput)} className="login-form">
+          <form  className="login-form">
             <input
               type="text"
               placeholder="Enter City"
               className="search-city-input"
               onChange={(event) => this.setState({userInput: event.target.value})}
+
             />
-            <button type="button">Submit</button>
+            <button onClick={() => this.storeCities(this.state.userInput)} type="button">Submit</button>
           </form>
         </section>
       </div>
@@ -41,9 +41,9 @@ class LocationInput extends Component {
   }
 }
 
-LocationInput.propTypes = {
-  getCities: PropTypes.func.isRequired
-};
+// LocationInput.propTypes = {
+//   getCities: PropTypes.func.isRequired
+// };
 
 // const mapStateToProps = (state) => ({
 //   locations: state.locations

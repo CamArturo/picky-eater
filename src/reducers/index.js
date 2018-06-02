@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
-import { loadLocations } from './locationReducers';
+import { locations } from './locationReducers';
+import { chosenCity } from './chosenCityReducer';
 
 const rootReducer = combineReducers(
   {
-    locations: loadLocations
+    locations,
+    chosenCity
   }
 );
 

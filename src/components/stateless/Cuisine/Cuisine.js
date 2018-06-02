@@ -6,7 +6,7 @@ import CuisineCard from '../CuisineCard/CuisineCard';
 const Cuisine = props => {
   return (
     <div>
-      <section className="cuisine-container-header">
+      <section className="cuisine-header">
         <h2>What do you NOT want to eat?</h2>
       </section>
       <section className="cuisine-container">

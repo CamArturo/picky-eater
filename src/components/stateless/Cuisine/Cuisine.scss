@@ -1,4 +1,4 @@
-.cuisine-container-header {
+.cuisine-header {
   background: url("../../../assets/food-200.jpg");
   height: 200px;
   h2 {
@@ -26,9 +26,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #cecece;
+    h3 {
+      width: 124px;
+      height: 51px;
+
+      font-family: Catamaran, serif;
+      font-style: italic;
+      font-weight: normal;
+      line-height: 150%;
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+
+      color: #000;
+    }
   }
 }
-
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
