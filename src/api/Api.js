@@ -17,3 +17,21 @@ export const getCities = async (query) => {
     throw new Error(`Failed to fetch. (error: ${error.message})`)
   }
 };
+
+export const getCuisines = async (city) => {
+  try {
+    const baseURL = `https://developers.zomato.com/api/v2.1/cities?q=${city}`;
+    const options = {
+      method: 'GET',
+      headers: {
+        'user-key': key,
+        'Content-Type': 'application/json'
+      }
+    };
+    const response = await fetch(baseURL, options);
+    const cuisines = await response.json();
+    return cuisines;
+  } catch (error) {
+    throw new Error(`Failed to fetch. (error: ${error.message}`)
+  }
+};
