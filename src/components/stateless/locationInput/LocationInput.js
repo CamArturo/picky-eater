@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import { getCities } from '../../../api/Api';
 import { sendLocationsToStore } from '../../../actions/loadLocations';
 import { connect } from 'react-redux';
-
+import { NavLink } from 'react-router-dom';
 
 class LocationInput extends Component {
   constructor (props) {
     super(props);
     this.state = {
       userInput: ''
-    }
+    };
   }
 
   storeCities = async (userInput) => {
     const cities = await getCities(userInput);
-    this.props.loadLocations(cities.location_suggestions, cities.id)
+    this.props.loadLocations(cities.location_suggestions, cities.id);
   };
 
   render () {
@@ -25,13 +25,17 @@ class LocationInput extends Component {
         </section>
         <section className="locations">
           <h3>Confirm your city</h3>
-          <form  className="login-form">
+          <form className="login-form" onSubmit={(event) => {
+            event.preventDefault();
+            this.storeCities(this.state.userInput)
+          }}>
             <input
               type="text"
               placeholder="Enter City"
               className="search-city-input"
               onChange={(event) => this.setState({userInput: event.target.value})}
             />
+
             <button onClick={() => this.storeCities(this.state.userInput)} type="button">Submit</button>
           </form>
         </section>
