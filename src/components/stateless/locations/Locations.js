@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { addChosenCity } from '../../../actions/chosenCity';
 
-class Locations extends Component {
+export class Locations extends Component {
 
   displayLocations = () => {
     if (this.props.locations.length > 0) {
       return this.props.locations.map((location, index) => (
-        <button key={`key${index}`}>{location.name}</button>
+        <button key={`key${index}`} onClick={() => this.props.storeChosenCity(location.name)}>{location.name}</button>
       ));
     }
   };
@@ -21,10 +21,12 @@ class Locations extends Component {
   }
 }
 
-
-
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   locations: state.locations
 });
 
-export default connect(mapStateToProps, null)(Locations);
+export const mapDispatchToProps = (dispatch) => ({
+  storeChosenCity: (chosenCity) => dispatch(addChosenCity(chosenCity))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Locations);

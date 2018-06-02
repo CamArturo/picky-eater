@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from '../header/Header';
-import Hero from '../hero/Hero';
-import Discover from '../discover/Discover';
-import locationSearch from '../location/Location';
-import { Route } from 'react-router-dom';
+import Home from '../home/Home';
+import LocationSearch from '../location/Location';
+import { Route, NavLink, withRouter } from 'react-router-dom';
+import Cuisine from '../Cuisine/Cuisine';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Header/>
-        <Route exact path="/location" component={locationSearch}/>
-        <Route exact path="/" component={Hero}/>
-        <Route exact path="/" component={Discover}/>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/location" component={LocationSearch}/>
+        <Route exact path="/cuisine" component={Cuisine}/>
       </div>
     );
   }

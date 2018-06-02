@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from '../../../assets/picky-eater-logo.png';
-import './Header.css'
+import './Header.css';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header>
-      <img src={logo} className="App-logo" alt="logo" />
+      <NavLink to="/" className="home"><img src={logo} className="App-logo" alt="Picky Eater Logo" /></NavLink>
     </header>
   );
 };

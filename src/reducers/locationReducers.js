@@ -1,4 +1,4 @@
-export const loadLocations = (state = [], action) => {
+export const locations = (state = [], action) => {
   switch (action.type) {
     case 'STORE_CITIES':
       return [...action.locations];
@@ -6,5 +6,3 @@ export const loadLocations = (state = [], action) => {
       return state
   }
 };
-
-
