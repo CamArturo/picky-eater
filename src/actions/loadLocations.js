@@ -1,6 +1,7 @@
-export const sendLocationsToStore = locations => (
+export const sendLocationsToStore = (locations, id) => (
   {
     type: 'STORE_CITIES',
-    locations
+    locations,
+    id
   }
 );

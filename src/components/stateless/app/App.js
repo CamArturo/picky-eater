@@ -3,7 +3,7 @@ import './App.css';
 import Header from '../header/Header';
 import Home from '../home/Home';
 import LocationSearch from '../location/Location';
-import { Route, NavLink, withRouter } from 'react-router-dom';
+import { Route, NavLink, withRouter } from 'react-router';
 import Cuisine from '../Cuisine/Cuisine';
 
 class App extends Component {
