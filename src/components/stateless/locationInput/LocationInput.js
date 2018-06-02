@@ -14,7 +14,7 @@ class LocationInput extends Component {
 
   storeCities = async (userInput) => {
     const cities = await getCities(userInput);
-    this.props.loadLocations(cities.location_suggestions)
+    this.props.loadLocations(cities.location_suggestions, cities.id)
   };
 
   render () {
@@ -31,7 +31,6 @@ class LocationInput extends Component {
               placeholder="Enter City"
               className="search-city-input"
               onChange={(event) => this.setState({userInput: event.target.value})}
-
             />
             <button onClick={() => this.storeCities(this.state.userInput)} type="button">Submit</button>
           </form>

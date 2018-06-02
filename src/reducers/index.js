@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import { locations } from './locationReducers';
 import { chosenCity } from './chosenCityReducer';
-import { cuisines} from './cuisineReducer';
+import { availableCuisines} from './cuisineReducer';
 
 const rootReducer = combineReducers(
   {
     locations,
     chosenCity,
-    cuisines
+    availableCuisines
   }
 );
 
