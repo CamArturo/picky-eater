@@ -14,12 +14,18 @@ import { chosenCity } from '../../../reducers/chosenCityReducer';
 describe('Locations', () => {
   let wrapper;
   let mockState;
+  let mockProps;
   beforeEach(() => {
-    wrapper = shallow(<Locations locations={mockLocations} storeChosenCity={jest.fn} />);
     mockState = {
       locations: mockLocations,
       chosenCity: 'Newton, IL'
     };
+
+    mockProps = {
+      storeChosenCity: jest.fn()
+    };
+
+    wrapper = shallow(<Locations {...mockProps} locations={mockLocations} storeChosenCity={jest.fn()} />);
   });
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
@@ -36,16 +42,29 @@ describe('Locations', () => {
     const actionToDispatch = {"city": "Newton, IL", "type": "ADD_CHOSEN_CITY"};
 
     // const actionToDispatch = addChosenCity('Newton, IL');
-    const mappedProps = mapDispatchToProps(mockDispatch);
+    const mappedProps = mapDispatchToProps(mockDispatch); // <---- action creator
 
     mappedProps.storeChosenCity('Newton, IL');
-
+    // dispatches a function that passing that object the actions
+    // method that calls another method(action creator) that has an action (an object)
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
   });
   it('should fire storeChosenCity when a button is clicked', () => {
+    const mockedDispatchToProps = jest.fn();
+    const mappedProps = mapDispatchToProps(mockedDispatchToProps);
+    const chosenCity = 'Newton, IL';
+
+    mappedProps.storeChosenCity(chosenCity);
+
+    const expected = addChosenCity(chosenCity); // everything that is going to be called with
+    expect(mockedDispatchToProps).toHaveBeenCalledWith(expected);
 
   });
   it('should only render buttons when there are more than 0 locations in store', () => {
+    const mockLocations = [];
+    const wrapper2 = shallow(<Locations locations={mockLocations} />);
 
+    expect(wrapper2.find('.location-btn').exists()).toEqual(false);
   });
 });
+
