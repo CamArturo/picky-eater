@@ -22,16 +22,20 @@ describe('locations Tests', function () {
 
   it('should return an array of cities when with ADD_CHOSEN_CITY action', function () {
 
-    const payload = 'Newton, IL';
-    const actual = chosenCity(mockState, addChosenCity(payload));
+    // const payload = ('Newton, IL', 5172);
+    const actual = chosenCity(mockState, addChosenCity('Newton, IL', 5172));
+    const expected = {
+      city: 'Newton, IL',
+      id: 5172
+    };
 
-    expect(actual).toEqual('Newton, IL');
+    expect(actual).toEqual(expected);
 
   });
   it('should return initial state if there is no given state', function () {
 
     const actual = chosenCity(undefined, {});
 
-    expect(actual).toEqual('');
+    expect(actual).toEqual({});
   });
 });
