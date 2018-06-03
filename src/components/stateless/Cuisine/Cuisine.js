@@ -4,24 +4,21 @@ import './Cuisine.css';
 import CuisineCard from '../CuisineCard/CuisineCard';
 import { getCuisines } from '../../../api/Api';
 import { connect } from 'react-redux';
-import {withRouter} from 'react-router';
-
-
+import { withRouter } from 'react-router';
+import { sendCuisinesToStore } from '../../../actions/cuisines';
 
 class Cuisine extends Component {
   constructor (props) {
     super(props);
   }
 
-  ComponentDidMount () {
-    this.storeCuisines(this.props.chosenCity.id)
+  componentDidMount() {
+    this.storeCuisines(this.props.chosenCityID);
   }
 
   storeCuisines = async (chosenCityID) => {
-    console.log('fiedd')
     const cuisines = await getCuisines(chosenCityID);
-    console.log(cuisines)
-    // this.props.loadCuisines(cuisines.cuisines);
+    this.props.loadCuisines(cuisines);
   };
 
   render () {
@@ -50,7 +47,12 @@ class Cuisine extends Component {
 
 const mapStateToProps = (state) => ({
   cuisines: state.cuisines,
-  chosenCity: state.chosenCity.id
+  chosenCityID: state.chosenCity.id
 });
 
-export default withRouter(connect(mapStateToProps, null)(Cuisine));
+const mapDispatchToProps = (dispatch) => ({
+  loadCuisines: (cities) => dispatch(sendCuisinesToStore(cities))
+});
+
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cuisine));
