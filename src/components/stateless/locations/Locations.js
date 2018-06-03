@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom'
@@ -25,6 +26,12 @@ export class Locations extends Component {
     );
   }
 }
+
+
+Locations.propTypes = {
+  storeChosenCity: PropTypes.func.isRequired,
+  locations: PropTypes.array.isRequired
+};
 
 export const mapStateToProps = (state) => ({
   locations: state.locations

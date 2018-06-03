@@ -60,7 +60,13 @@ class Cuisine extends Component {
   }
 }
 
-// Cuisine.propTypes = {};
+Cuisine.propTypes = {
+  getCuisines: PropTypes.func.isRequired,
+  sendCuisinesToStore: PropTypes.func.isRequired,
+  loadCuisines: PropTypes.func.isRequired,
+  availableCuisines: PropTypes.array.isRequired,
+  chosenCityID: PropTypes.number.isRequired
+};
 
 const mapStateToProps = (state) => ({
   availableCuisines: state.availableCuisines,
