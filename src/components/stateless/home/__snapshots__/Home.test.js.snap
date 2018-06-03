@@ -19,6 +19,11 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <withRouter(Hero) />,
+        <h2
+          className="discover-tagline"
+>
+          When nothing sounds good, let us help you find your perfect meal.
+</h2>,
         <section
           className="discover-info"
 >
@@ -66,7 +71,7 @@ ShallowWrapper {
                                         src="smiley.png"
                               />
                               <p>
-                                        Come back next time you're hungry.
+                                        Come back next time you're hungry!
                               </p>
                     </div>
           </section>
@@ -83,6 +88,18 @@ ShallowWrapper {
         "ref": null,
         "rendered": null,
         "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "When nothing sounds good, let us help you find your perfect meal.",
+          "className": "discover-tagline",
+        },
+        "ref": null,
+        "rendered": "When nothing sounds good, let us help you find your perfect meal.",
+        "type": "h2",
       },
       Object {
         "instance": null,
@@ -133,7 +150,7 @@ ShallowWrapper {
                                     src="smiley.png"
                         />
                         <p>
-                                    Come back next time you're hungry.
+                                    Come back next time you're hungry!
                         </p>
             </div>
 </section>,
@@ -187,7 +204,7 @@ ShallowWrapper {
                                 src="smiley.png"
                 />
                 <p>
-                                Come back next time you're hungry.
+                                Come back next time you're hungry!
                 </p>
 </div>,
             ],
@@ -338,7 +355,7 @@ ShallowWrapper {
                     src="smiley.png"
 />,
                   <p>
-                    Come back next time you're hungry.
+                    Come back next time you're hungry!
 </p>,
                 ],
                 "className": "icon-container",
@@ -362,10 +379,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Come back next time you're hungry.",
+                    "children": "Come back next time you're hungry!",
                   },
                   "ref": null,
-                  "rendered": "Come back next time you're hungry.",
+                  "rendered": "Come back next time you're hungry!",
                   "type": "p",
                 },
               ],
@@ -387,6 +404,11 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <withRouter(Hero) />,
+          <h2
+            className="discover-tagline"
+>
+            When nothing sounds good, let us help you find your perfect meal.
+</h2>,
           <section
             className="discover-info"
 >
@@ -434,7 +456,7 @@ ShallowWrapper {
                                                 src="smiley.png"
                                     />
                                     <p>
-                                                Come back next time you're hungry.
+                                                Come back next time you're hungry!
                                     </p>
                         </div>
             </section>
@@ -451,6 +473,18 @@ ShallowWrapper {
           "ref": null,
           "rendered": null,
           "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "When nothing sounds good, let us help you find your perfect meal.",
+            "className": "discover-tagline",
+          },
+          "ref": null,
+          "rendered": "When nothing sounds good, let us help you find your perfect meal.",
+          "type": "h2",
         },
         Object {
           "instance": null,
@@ -501,7 +535,7 @@ ShallowWrapper {
                                           src="smiley.png"
                             />
                             <p>
-                                          Come back next time you're hungry.
+                                          Come back next time you're hungry!
                             </p>
               </div>
 </section>,
@@ -555,7 +589,7 @@ ShallowWrapper {
                                     src="smiley.png"
                   />
                   <p>
-                                    Come back next time you're hungry.
+                                    Come back next time you're hungry!
                   </p>
 </div>,
               ],
@@ -706,7 +740,7 @@ ShallowWrapper {
                       src="smiley.png"
 />,
                     <p>
-                      Come back next time you're hungry.
+                      Come back next time you're hungry!
 </p>,
                   ],
                   "className": "icon-container",
@@ -730,10 +764,10 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "Come back next time you're hungry.",
+                      "children": "Come back next time you're hungry!",
                     },
                     "ref": null,
-                    "rendered": "Come back next time you're hungry.",
+                    "rendered": "Come back next time you're hungry!",
                     "type": "p",
                   },
                 ],

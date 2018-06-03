@@ -10,6 +10,7 @@ const Home = () => {
   return (
     <div>
       <Hero></Hero>
+      <h2 className="discover-tagline">When nothing sounds good, let us help you find your perfect meal.</h2>
       <section className="discover-info">
         <section className="infographics d-flex">
           <div className="icon-container">
@@ -26,7 +27,7 @@ const Home = () => {
           </div>
           <div className="icon-container">
           <img src={smiley} alt="Location" />
-            <p>Come back next time you're hungry.</p>
+            <p>Come back next time you're hungry!</p>
           </div>
         </section>
       </section>
