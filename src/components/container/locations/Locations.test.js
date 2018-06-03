@@ -8,8 +8,6 @@ import React from 'react';
 import { mockLocations } from '../../../mockData';
 import { mapStateToProps, mapDispatchToProps } from './Locations';
 import { addChosenCity } from '../../../actions/chosenCity';
-import { locations } from '../../../reducers/locationReducers';
-import { chosenCity } from '../../../reducers/chosenCityReducer';
 
 describe('Locations', () => {
   let wrapper;
@@ -41,7 +39,6 @@ describe('Locations', () => {
     const mockDispatch = jest.fn();
     const actionToDispatch = {'city': 'Newton, IL', 'type': 'ADD_CHOSEN_CITY'};
 
-    // const actionToDispatch = addChosenCity('Newton, IL');
     const mappedProps = mapDispatchToProps(mockDispatch); // <---- action creator
 
     mappedProps.storeChosenCity('Newton, IL');
@@ -67,6 +64,14 @@ describe('Locations', () => {
     const wrapper2 = shallow(<Locations storeChosenCity={mappedProps} locations={mockLocations} />);
 
     expect(wrapper2.find('.location-btn').exists()).toEqual(false);
+  });
+  it('should not render buttons if locations is zero length', () => {
+    const mockState3 = {
+      locations: undefined,
+      chosenCity: 'Newton, IL'
+    };
+    const wrapper3 = shallow(<Locations {...mockState3} {...mockProps} locations={mockLocations} storeChosenCity={jest.fn()} />);
+    expect(wrapper3).toMatchSnapshot();
   });
 });
 
