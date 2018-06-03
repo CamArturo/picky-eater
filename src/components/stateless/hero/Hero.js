@@ -1,4 +1,6 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
+import { NavLink, Route, withRouter } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
@@ -6,10 +8,15 @@ const Hero = () => {
     <section className="hero-container">
       <section className="inner">
         <h2>Find it. Finally.</h2>
-        <button>Restaurant Match</button>
+        <NavLink to="/location">
+          <button>Restaurant Match</button>
+        </NavLink>
       </section>
+      <Route exact path='/location' component={Location} />
     </section>
   );
 };
 
-export default Hero;
+
+
+export default withRouter((Hero));

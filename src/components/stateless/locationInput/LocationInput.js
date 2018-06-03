@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+
 import { getCities } from '../../../api/Api';
 import { sendLocationsToStore } from '../../../actions/loadLocations';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 
 class LocationInput extends Component {
   constructor (props) {
@@ -42,14 +42,6 @@ class LocationInput extends Component {
     );
   }
 }
-
-// LocationInput.propTypes = {
-//   getCities: PropTypes.func.isRequired
-// };
-
-// const mapStateToProps = (state) => ({
-//   locations: state.locations
-// });
 
 const mapDispatchToProps = (dispatch) => ({
   loadLocations: (cities) => dispatch(sendLocationsToStore(cities))

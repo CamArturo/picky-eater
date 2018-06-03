@@ -7,6 +7,7 @@ const Header = () => {
   return (
     <header>
       <NavLink to="/" className="home"><img src={logo} className="App-logo" alt="Picky Eater Logo" /></NavLink>
+      <div className="tag-line"><p>There is a right choice after all.</p></div>
     </header>
   );
 };
