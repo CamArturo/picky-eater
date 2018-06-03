@@ -17,14 +17,14 @@
 .cuisine-container {
   display: flex;
   flex-wrap: wrap; }
-  .cuisine-container .cuisine-card {
+  .cuisine-container .cuisine-btn {
     width: 240px;
     height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid #cecece; }
-    .cuisine-container .cuisine-card h3 {
+    .cuisine-container .cuisine-btn h3 {
       width: 124px;
       height: 51px;
       font-family: Catamaran, serif;
@@ -34,6 +34,13 @@
       font-size: 2rem;
       letter-spacing: 0.04em;
       color: #000; }
+
+.loading-gif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%; }
 
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */

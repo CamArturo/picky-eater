@@ -35,7 +35,6 @@ class LocationInput extends Component {
               className="search-city-input"
               onChange={(event) => this.setState({userInput: event.target.value})}
             />
-
             <button onClick={() => this.storeCities(this.state.userInput)} type="button">Submit</button>
           </form>
         </section>

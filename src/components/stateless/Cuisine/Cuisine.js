@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Cuisine.css';
-import CuisineCard from '../CuisineCard/CuisineCard';
-import { getCuisines } from '../../../api/Api';
+import Loading from '../Loading/Loading';
 import { connect } from 'react-redux';
-import {withRouter} from 'react-router';
-
-
+import { withRouter } from 'react-router';
+import { getCuisines } from '../../../api/Api';
+import { sendCuisinesToStore } from '../../../actions/cuisines';
+import './Cuisine.css';
 
 class Cuisine extends Component {
   constructor (props) {
     super(props);
   }
 
-  ComponentDidMount () {
-    this.storeCuisines(this.props.chosenCity.id)
+  componentDidMount() {
+    if (this.props.availableCuisines.length > 0) {
+      this.storeCuisines(this.props.chosenCityID);
+    }
   }
 
   storeCuisines = async (chosenCityID) => {
-    console.log('fiedd')
     const cuisines = await getCuisines(chosenCityID);
-    console.log(cuisines)
-    // this.props.loadCuisines(cuisines.cuisines);
+    this.props.loadCuisines(cuisines.cuisines);
   };
+
+  displayCuisines = () => {
+    return this.props.availableCuisines.map((cuisine, index) => (
+      <button className="cuisine-btn" key={`key${index}`}>
+        <h3>{cuisine.cuisine.cuisine_name}</h3>
+      </button>
+      ))
+    };
 
   render () {
     return (
@@ -31,15 +38,10 @@ class Cuisine extends Component {
           <h2>What do you NOT want to eat?</h2>
         </section>
         <section className="cuisine-container">
-          <CuisineCard />
-          <CuisineCard />
-          <CuisineCard />
-          <CuisineCard />
-          <CuisineCard />
-          <CuisineCard />
-          <CuisineCard />
-          <CuisineCard />
-          <CuisineCard />
+          {
+            this.props.availableCuisines.length > 0 ?
+            this.displayCuisines() : <Loading/>
+          }
         </section>
       </div>
     );
@@ -49,8 +51,13 @@ class Cuisine extends Component {
 // Cuisine.propTypes = {};
 
 const mapStateToProps = (state) => ({
-  cuisines: state.cuisines,
-  chosenCity: state.chosenCity.id
+  availableCuisines: state.availableCuisines,
+  chosenCityID: state.chosenCity.id
 });
 
-export default withRouter(connect(mapStateToProps, null)(Cuisine));
+const mapDispatchToProps = (dispatch) => ({
+  loadCuisines: (cities) => dispatch(sendCuisinesToStore(cities))
+});
+
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cuisine));
