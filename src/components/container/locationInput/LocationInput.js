@@ -14,7 +14,7 @@ class LocationInput extends Component {
 
   storeCities = async (userInput) => {
     const cities = await getCities(userInput);
-    this.props.loadLocations(cities.location_suggestions, cities.id);
+    this.props.loadLocations(cities.location_suggestions);
   };
 
   render () {

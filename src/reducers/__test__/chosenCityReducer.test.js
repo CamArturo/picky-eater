@@ -7,7 +7,7 @@
 import { addChosenCity } from '../../actions/chosenCity';
 import { chosenCity } from '../chosenCityReducer';
 
-describe('locations Tests', function () {
+describe('Chosen City Reducer Tests', () => {
 
   let mockState;
   let initialState;
@@ -20,9 +20,7 @@ describe('locations Tests', function () {
     initialState = '';
   });
 
-  it('should return an array of cities when with ADD_CHOSEN_CITY action', function () {
-
-    // const payload = ('Newton, IL', 5172);
+  it('should return an array of cities when with ADD_CHOSEN_CITY action', () => {
     const actual = chosenCity(mockState, addChosenCity('Newton, IL', 5172));
     const expected = {
       city: 'Newton, IL',
@@ -32,7 +30,7 @@ describe('locations Tests', function () {
     expect(actual).toEqual(expected);
 
   });
-  it('should return initial state if there is no given state', function () {
+  it('should return initial state if there is no given state', () => {
 
     const actual = chosenCity(undefined, {});
 
