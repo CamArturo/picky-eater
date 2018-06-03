@@ -1,7 +1,7 @@
 import React from 'react';
 import './Location.css';
-import LocationInput from '../locationInput/LocationInput';
-import Locations from '../locations/Locations';
+import LocationInput from '../../container/locationInput/LocationInput';
+import Locations from '../../container/locations/Locations';
 
 const Location = () => {
   return (

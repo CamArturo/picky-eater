@@ -1,5 +1,5 @@
 import React from 'react';
-import locationInput from './locationInput';
+import locationInput from './LocationInput';
 import { shallow } from 'enzyme';
 
 
