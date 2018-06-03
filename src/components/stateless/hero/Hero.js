@@ -1,6 +1,5 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
-import { connect } from 'react-redux';
 import { NavLink, Route, withRouter } from 'react-router-dom';
 import './Hero.css';
 

@@ -1,24 +1,47 @@
 header {
-  height: 100px; }
+  height: 100px;
+  display: flex;
+  align-items: center; }
   header img {
     width: 300px;
     height: 40px;
-    margin: 30px 0 0 100px; }
+    margin: 0 30px 0 100px; }
+  header .tag-line p {
+    font-family: 'Mukta Vaani', sans-serif;
+    font-size: 1.1rem;
+    margin: 12px 0 0 0; }
 
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
 /* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  header {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center; }
+    header .home {
+      width: 100%; }
+    header .tag-line p {
+      margin: 0; } }
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
   header {
+    padding-top: 10px;
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center; }
     header img {
       width: 300px;
       height: 40px;
       margin: 0;
-      padding: 0 20px; } }
+      padding: 0 20px; }
+    header .tag-line p {
+      margin: 0; } }
 /* Custom, iPhone Retina */
 
 /*# sourceMappingURL=Header.css.map */

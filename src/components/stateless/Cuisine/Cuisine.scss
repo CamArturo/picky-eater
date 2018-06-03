@@ -27,6 +27,9 @@
     justify-content: center;
     align-items: center;
     border: 1px solid #cecece;
+    &:hover {
+      background-color: #cecece;
+    }
     h3 {
       width: 124px;
       height: 51px;
