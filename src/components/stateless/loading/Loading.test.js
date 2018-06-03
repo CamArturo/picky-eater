@@ -1,10 +1,10 @@
 import React from 'react';
-import Location from './Location';
 import { shallow } from 'enzyme';
+import Loading from './Loading';
 
 
 it('Should match the snapshot', () => {
-  const appComponent = shallow(<Location />);
+  const appComponent = shallow(<Loading />);
 
   expect(appComponent).toMatchSnapshot();
 });

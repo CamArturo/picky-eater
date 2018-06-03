@@ -27,7 +27,6 @@ export class Locations extends Component {
   }
 }
 
-
 Locations.propTypes = {
   storeChosenCity: PropTypes.func.isRequired,
   locations: PropTypes.array.isRequired

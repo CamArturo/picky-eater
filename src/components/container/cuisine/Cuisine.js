@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Loading from '../Loading/Loading';
+import Loading from '../../stateless/loading/Loading';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { getCuisines } from '../../../api/Api';
