@@ -1,5 +1,4 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
 import { NavLink, Route, withRouter } from 'react-router-dom';
 import './Hero.css';
 
@@ -16,7 +15,5 @@ const Hero = () => {
     </section>
   );
 };
-
-
 
 export default withRouter((Hero));

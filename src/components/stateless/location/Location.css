@@ -51,7 +51,8 @@
     .location-container .login-form button:hover, .location-container .login-form button:active, .location-container .login-form button:focus {
       background: #1468cc; }
 .location-container .locations-container {
-  padding-bottom: 60px; }
+  padding-bottom: 60px;
+  min-height: 100vh; }
   .location-container .locations-container button {
     background-color: #0956B2;
     width: 300px;
