@@ -12,11 +12,19 @@ class Cuisine extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    if (this.props.availableCuisines.length > 0) {
+  componentDidMount () {
+    if (this.props.chosenCityID) {
       this.storeCuisines(this.props.chosenCityID);
     }
   }
+
+  displayNoLocations = () => {
+    return (
+      <section className="no-locations">
+        <p>No Locations Chosen</p>
+      </section>
+    );
+  };
 
   storeCuisines = async (chosenCityID) => {
     const cuisines = await getCuisines(chosenCityID);
@@ -28,8 +36,8 @@ class Cuisine extends Component {
       <button className="cuisine-btn" key={`key${index}`}>
         <h3>{cuisine.cuisine.cuisine_name}</h3>
       </button>
-      ))
-    };
+    ));
+  };
 
   render () {
     return (
@@ -39,8 +47,12 @@ class Cuisine extends Component {
         </section>
         <section className="cuisine-container">
           {
+            this.props.chosenCity &&
+            this.displayNoLocations()
+          }
+          {
             this.props.availableCuisines.length > 0 ?
-            this.displayCuisines() : <Loading/>
+              this.displayCuisines() : <Loading/>
           }
         </section>
       </div>
@@ -58,6 +70,5 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   loadCuisines: (cities) => dispatch(sendCuisinesToStore(cities))
 });
-
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cuisine));

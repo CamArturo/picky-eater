@@ -42,6 +42,10 @@
   height: 100vh;
   width: 100%; }
 
+.no-locations {
+  height: 100vh;
+  margin: 3rem auto 0; }
+
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
 /* Small Devices, Tablets */
