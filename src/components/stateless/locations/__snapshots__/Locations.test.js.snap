@@ -66,24 +66,42 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <button
-          className="location-btn"
-          onClick={[Function]}
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          to="/cuisine"
 >
-          Newton Grove, NC
-</button>,
-        <button
-          className="location-btn"
-          onClick={[Function]}
+          <button
+                    className="location-btn"
+                    onClick={[Function]}
+          >
+                    Newton Grove, NC
+          </button>
+</NavLink>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          to="/cuisine"
 >
-          Newton, IL
-</button>,
-        <button
-          className="location-btn"
-          onClick={[Function]}
+          <button
+                    className="location-btn"
+                    onClick={[Function]}
+          >
+                    Newton, IL
+          </button>
+</NavLink>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          to="/cuisine"
 >
-          Newton, MS
-</button>,
+          <button
+                    className="location-btn"
+                    onClick={[Function]}
+          >
+                    Newton, MS
+          </button>
+</NavLink>,
       ],
       "className": "locations-container",
     },
@@ -91,77 +109,21 @@ ShallowWrapper {
     "rendered": Array [
       Object {
         "instance": null,
-        "key": "key0",
-        "nodeType": "host",
+        "key": "nav0",
+        "nodeType": "function",
         "props": Object {
-          "children": "Newton Grove, NC",
-          "className": "location-btn",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Newton Grove, NC",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": "key1",
-        "nodeType": "host",
-        "props": Object {
-          "children": "Newton, IL",
-          "className": "location-btn",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Newton, IL",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": "key2",
-        "nodeType": "host",
-        "props": Object {
-          "children": "Newton, MS",
-          "className": "location-btn",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Newton, MS",
-        "type": "button",
-      },
-    ],
-    "type": "section",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <button
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": <button
             className="location-btn"
             onClick={[Function]}
 >
             Newton Grove, NC
 </button>,
-          <button
-            className="location-btn"
-            onClick={[Function]}
->
-            Newton, IL
-</button>,
-          <button
-            className="location-btn"
-            onClick={[Function]}
->
-            Newton, MS
-</button>,
-        ],
-        "className": "locations-container",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
+          "to": "/cuisine",
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": "key0",
           "nodeType": "host",
@@ -174,7 +136,25 @@ ShallowWrapper {
           "rendered": "Newton Grove, NC",
           "type": "button",
         },
-        Object {
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "nav1",
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": <button
+            className="location-btn"
+            onClick={[Function]}
+>
+            Newton, IL
+</button>,
+          "to": "/cuisine",
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": "key1",
           "nodeType": "host",
@@ -187,7 +167,25 @@ ShallowWrapper {
           "rendered": "Newton, IL",
           "type": "button",
         },
-        Object {
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "nav2",
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": <button
+            className="location-btn"
+            onClick={[Function]}
+>
+            Newton, MS
+</button>,
+          "to": "/cuisine",
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": "key2",
           "nodeType": "host",
@@ -199,6 +197,152 @@ ShallowWrapper {
           "ref": null,
           "rendered": "Newton, MS",
           "type": "button",
+        },
+        "type": [Function],
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            to="/cuisine"
+>
+            <button
+                        className="location-btn"
+                        onClick={[Function]}
+            >
+                        Newton Grove, NC
+            </button>
+</NavLink>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            to="/cuisine"
+>
+            <button
+                        className="location-btn"
+                        onClick={[Function]}
+            >
+                        Newton, IL
+            </button>
+</NavLink>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            to="/cuisine"
+>
+            <button
+                        className="location-btn"
+                        onClick={[Function]}
+            >
+                        Newton, MS
+            </button>
+</NavLink>,
+        ],
+        "className": "locations-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "nav0",
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": <button
+              className="location-btn"
+              onClick={[Function]}
+>
+              Newton Grove, NC
+</button>,
+            "to": "/cuisine",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": "key0",
+            "nodeType": "host",
+            "props": Object {
+              "children": "Newton Grove, NC",
+              "className": "location-btn",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Newton Grove, NC",
+            "type": "button",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "nav1",
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": <button
+              className="location-btn"
+              onClick={[Function]}
+>
+              Newton, IL
+</button>,
+            "to": "/cuisine",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": "key1",
+            "nodeType": "host",
+            "props": Object {
+              "children": "Newton, IL",
+              "className": "location-btn",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Newton, IL",
+            "type": "button",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "nav2",
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": <button
+              className="location-btn"
+              onClick={[Function]}
+>
+              Newton, MS
+</button>,
+            "to": "/cuisine",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": "key2",
+            "nodeType": "host",
+            "props": Object {
+              "children": "Newton, MS",
+              "className": "location-btn",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Newton, MS",
+            "type": "button",
+          },
+          "type": [Function],
         },
       ],
       "type": "section",
