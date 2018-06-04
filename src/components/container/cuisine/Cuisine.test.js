@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cuisine } from './Cuisine';
 import { shallow, mount } from 'enzyme';
-import * as mock from '../../../mockData'
+import * as mock from '../../../mockData';
 // import { getCuisines } from '../../../api/getCuisines'
 jest.mock('../../../api/getCuisines');
 
@@ -26,14 +26,14 @@ describe('Cuisine page tests', () => {
     chosenCity = mock.chosenCity;
 
     wrapper = shallow(<Cuisine
-      chosenCityID={chosenCityID}
-      storeCuisines={storeCuisines}
-      getCuisines={getCuisines}
-      sendCuisinesToStore={sendCuisinesToStore}
-      loadCuisines={loadCuisines}
-      availableCuisines={availableCuisines}
-      chosenCity={chosenCity}
-    />,
+        storeCuisines={storeCuisines}
+        chosenCityID={chosenCityID}
+        getCuisines={getCuisines}
+        sendCuisinesToStore={sendCuisinesToStore}
+        loadCuisines={loadCuisines}
+        availableCuisines={availableCuisines}
+        chosenCity={chosenCity}
+      />,
       {
         disableLifecycleMethods: false
       });
@@ -44,17 +44,9 @@ describe('Cuisine page tests', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it.skip('it calls storeCuisines on compentDidMount when chosenCidtyID has value', async () => {
-    // const appComponent = shallow(<Cuisine chosenCityID={chosenCityID} storeCuisines={storeCuisines} />);
+  it('it calls storeCuisines on componentDidMount when chosenCityID has value', async () => {
 
-    // console.log(await wrapper.instance().storeCuisines(305))
-    // storeCuisines();
-    // wrapper.instance().componentDidMount();
-    expect(getCuisines).toHaveBeenCalled()
-
-    // expect fetch method called with correct params
-
-    // expect(storeCuisines).toHaveBeenCalled();
+    expect(loadCuisines).toHaveBeenCalled();
   });
 
   // it.skip('should ', () => {
