@@ -1,7 +1,7 @@
-import { getCities } from './Api';
-import { getCuisines} from './Api';
-import { mockCuisines} from '../mockData';
-import key from '../apiKey';
+import { getCities } from '../getCities'
+import { getCuisines} from '../getCuisines';
+import key from '../../apiKey';
+import { availableCuisines} from '../../mockData';
 
 describe('API tests', () => {
   describe('getCities', () => {
@@ -51,7 +51,7 @@ describe('API tests', () => {
 
     beforeEach(() => {
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-        json: () => Promise.resolve(mockCuisines)
+        json: () => Promise.resolve(availableCuisines)
       }));
     });
     it('should call the fetch with the correct params', async () => {
@@ -76,7 +76,7 @@ describe('API tests', () => {
 
       const actual = await getCuisines(305);
 
-      expect(actual).toBe(mockCuisines)
+      expect(actual).toBe(availableCuisines)
 
     });
 

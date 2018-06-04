@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { getCities } from '../../../api/Api';
+import { getCities } from '../../../api/getCities';
 import { sendLocationsToStore } from '../../../actions/loadLocations';
 import { connect } from 'react-redux';
 
