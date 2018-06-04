@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 import Loading from '../../stateless/loading/Loading';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { getCuisines } from '../../../api/Api';
+import { getCuisines } from '../../../api/getCuisines'
+
 import { sendCuisinesToStore } from '../../../actions/cuisines';
 import './Cuisine.css';
 
-class Cuisine extends Component {
+export class Cuisine extends Component {
   constructor (props) {
     super(props);
   }
 
-  componentDidMount () {
+  componentDidMount() {
     if (this.props.chosenCityID) {
       this.storeCuisines(this.props.chosenCityID);
     }
@@ -47,12 +48,16 @@ class Cuisine extends Component {
         </section>
         <section className="cuisine-container">
           {
-            this.props.chosenCity &&
+            Object.keys(this.props.chosenCity).length === 0 &&
             this.displayNoLocations()
           }
           {
-            this.props.availableCuisines.length > 0 ?
-              this.displayCuisines() : <Loading/>
+            this.props.availableCuisines.length > 0 &&
+              this.displayCuisines()
+          }
+          {
+            Object.keys(this.props.chosenCity).length > 0 && this.props.availableCuisines.length === 0 &&
+            <Loading/>
           }
         </section>
       </div>
@@ -65,12 +70,14 @@ Cuisine.propTypes = {
   sendCuisinesToStore: PropTypes.func.isRequired,
   loadCuisines: PropTypes.func.isRequired,
   availableCuisines: PropTypes.array.isRequired,
-  chosenCityID: PropTypes.number.isRequired
+  chosenCityID: PropTypes.number.isRequired,
+  chosenCity: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => ({
   availableCuisines: state.availableCuisines,
-  chosenCityID: state.chosenCity.id
+  chosenCityID: state.chosenCity.id,
+  chosenCity: state.chosenCity
 });
 
 const mapDispatchToProps = (dispatch) => ({

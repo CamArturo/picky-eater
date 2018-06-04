@@ -13,6 +13,7 @@ describe('Locations', () => {
   let wrapper;
   let mockState;
   let mockProps;
+
   beforeEach(() => {
     mockState = {
       locations: mockLocations,
@@ -61,16 +62,15 @@ describe('Locations', () => {
     const mockLocations = [];
     const mockedDispatchToProps = jest.fn();
     const mappedProps = mapDispatchToProps(mockedDispatchToProps);
-    const wrapper2 = shallow(<Locations storeChosenCity={mappedProps} locations={mockLocations} />);
+    const wrapper2 = shallow(<Locations storeChosenCity={mappedProps.storeChosenCity} locations={mockLocations} />);
 
     expect(wrapper2.find('.location-btn').exists()).toEqual(false);
   });
   it('should not render buttons if locations is zero length', () => {
     const mockState3 = {
-      locations: undefined,
-      chosenCity: 'Newton, IL'
+      locations: [],
     };
-    const wrapper3 = shallow(<Locations {...mockState3} {...mockProps} locations={mockLocations} storeChosenCity={jest.fn()} />);
+    const wrapper3 = shallow(<Locations {...mockProps} locations={mockState3.locations} storeChosenCity={jest.fn()} />);
     expect(wrapper3).toMatchSnapshot();
   });
 });
