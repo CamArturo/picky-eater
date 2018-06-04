@@ -37,6 +37,11 @@
       background-color: #0956B2;
       border: none;
       margin: 0 0 0 1.5rem;
+      &:hover {
+        color: #0956B2;
+        background-color: #fff;
+        cursor: pointer;
+      }
     }
   }
 }

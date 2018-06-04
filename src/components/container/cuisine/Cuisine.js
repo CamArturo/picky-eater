@@ -74,13 +74,13 @@ Cuisine.propTypes = {
   chosenCity: PropTypes.object.isRequired
 };
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   availableCuisines: state.availableCuisines,
   chosenCityID: state.chosenCity.id,
   chosenCity: state.chosenCity
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   loadCuisines: (cities) => dispatch(sendCuisinesToStore(cities))
 });
 

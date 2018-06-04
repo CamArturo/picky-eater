@@ -4,7 +4,7 @@ import { getCities } from '../../../api/getCities';
 import { sendLocationsToStore } from '../../../actions/loadLocations';
 import { connect } from 'react-redux';
 
-class LocationInput extends Component {
+export class LocationInput extends Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -48,7 +48,7 @@ LocationInput.propTypes = {
   loadLocations: PropTypes.func.isRequired
 };
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   loadLocations: (cities) => dispatch(sendLocationsToStore(cities))
 });
 
