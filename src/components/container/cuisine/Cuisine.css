@@ -18,8 +18,8 @@
   display: flex;
   flex-wrap: wrap; }
   .cuisine-container .cuisine-btn {
-    width: 240px;
-    height: 200px;
+    width: 10%;
+    min-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,13 +27,10 @@
     .cuisine-container .cuisine-btn:hover {
       background-color: #cecece; }
     .cuisine-container .cuisine-btn h3 {
-      width: 124px;
-      height: 51px;
       font-family: Catamaran, serif;
       font-style: italic;
       font-weight: normal;
       line-height: 150%;
-      font-size: 2rem;
       letter-spacing: 0.04em;
       color: #000; }
 
@@ -54,4 +51,4 @@
 /* Extra Small Devices, Phones */
 /* Custom, iPhone Retina */
 
-/*# sourceMappingURL=cuisine.css.map */
+/*# sourceMappingURL=Cuisine.css.map */

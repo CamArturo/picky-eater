@@ -18,7 +18,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <withRouter(Hero) />,
+        <withRouter() />,
         <h2
           className="discover-tagline"
 >
@@ -403,7 +403,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <withRouter(Hero) />,
+          <withRouter() />,
           <h2
             className="discover-tagline"
 >

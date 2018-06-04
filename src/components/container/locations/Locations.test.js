@@ -24,7 +24,12 @@ describe('Locations', () => {
       storeChosenCity: jest.fn()
     };
 
-    wrapper = shallow(<Locations {...mockProps} locations={mockLocations} storeChosenCity={jest.fn()} />);
+    wrapper = shallow(
+      <Locations
+        {...mockProps}
+        locations={mockLocations}
+        storeChosenCity={jest.fn()}
+      />);
   });
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
@@ -68,7 +73,7 @@ describe('Locations', () => {
   });
   it('should not render buttons if locations is zero length', () => {
     const mockState3 = {
-      locations: [],
+      locations: []
     };
     const wrapper3 = shallow(<Locations {...mockProps} locations={mockState3.locations} storeChosenCity={jest.fn()} />);
     expect(wrapper3).toMatchSnapshot();
