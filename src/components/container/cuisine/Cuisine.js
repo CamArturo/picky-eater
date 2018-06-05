@@ -31,13 +31,6 @@ export class Cuisine extends Component {
     const cuisines = await getCuisines(chosenCityID);
     this.props.loadCuisines(cuisines.cuisines);
   };
-//
-// {
-//   cuisine: {
-//     cuisine_id: 1,
-//     cuisine_name: 'American'
-//   }
-// }
 
   displayCuisines = () => {
     return this.props.availableCuisines.map((cuisine, index) => (
@@ -68,18 +61,23 @@ export class Cuisine extends Component {
           <h2>What do you NOT want to eat?</h2>
         </section>
         <section className="cuisine-container">
-          {
-            Object.keys(this.props.chosenCity).length === 0 &&
-            this.displayNoLocations()
-          }
-          {
-            this.props.availableCuisines.length > 0 &&
-            this.displayCuisines()
-          }
-          {
-            Object.keys(this.props.chosenCity).length > 0 && this.props.availableCuisines.length === 0 &&
-            <Loading />
-          }
+          <section className="return-restaurants-container">
+            <button className='return-restaurants'>Return Restaurants</button>
+          </section>
+          {/*<section className="cuisines">*/}
+            {
+              Object.keys(this.props.chosenCity).length === 0 &&
+              this.displayNoLocations()
+            }
+            {
+              this.props.availableCuisines.length > 0 &&
+              this.displayCuisines()
+            }
+            {
+              Object.keys(this.props.chosenCity).length > 0 && this.props.availableCuisines.length === 0 &&
+              <Loading />
+            }
+          {/*</section>*/}
         </section>
       </div>
     );
