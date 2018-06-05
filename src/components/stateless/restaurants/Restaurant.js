@@ -1,15 +1,31 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getRestaurants } from '../../../api/getCuisines';
 import './Restaurants.css'
 
 export class Restaurants extends Component {
+
+  displayRestaurants = () => {
+    return this.props.restaurants.map((restaurant) => (
+      <article>
+        <h2>{restaurant}</h2>
+      </article>
+    ));
+  };
+
   render () {
     return (
-      <section className="restaurant-container">
-        <p>this is the restaurant container</p>
-      </section>
+      <div>
+        <section className="restaurant-header">
+          <h2>These are you results</h2>
+        </section>
+        <section className="restaurant-container">
+          {
+            this.props.restaurants.length > 0 &&
+            this.displayRestaurants()
+          }
+        </section>
+      </div>
     );
   }
 }

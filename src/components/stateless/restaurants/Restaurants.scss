@@ -1,3 +1,33 @@
+.restaurant-header {
+  background: url("../../../assets/restaurants.jpg");
+  height: 200px;
+  h2 {
+    font-family: Signika Negative, serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 56px;
+    font-size: 36px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    padding: 48px 0 0 0;
+    margin: 0;
+
+    color: #fff;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.7);
+  }
+}
+
 .restaurant-container {
   min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  article {
+    width: 20%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+  }
 }
