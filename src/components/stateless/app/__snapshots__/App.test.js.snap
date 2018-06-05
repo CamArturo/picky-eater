@@ -34,6 +34,11 @@ ShallowWrapper {
           exact={true}
           path="/cuisine"
 />,
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/Restaurants"
+/>,
       ],
       "className": "App",
     },
@@ -87,6 +92,19 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "exact": true,
+          "path": "/Restaurants",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "div",
   },
@@ -112,6 +130,11 @@ ShallowWrapper {
             component={[Function]}
             exact={true}
             path="/cuisine"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/Restaurants"
 />,
         ],
         "className": "App",
@@ -161,6 +184,19 @@ ShallowWrapper {
             "component": [Function],
             "exact": true,
             "path": "/cuisine",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/Restaurants",
           },
           "ref": null,
           "rendered": null,
