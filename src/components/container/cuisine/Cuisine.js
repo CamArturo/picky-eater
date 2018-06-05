@@ -3,15 +3,17 @@ import PropTypes from 'prop-types';
 import Loading from '../../stateless/loading/Loading';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import { NavLink } from 'react-router-dom'
 import { getCuisines } from '../../../api/getCuisines';
-
+import { getRestaurants } from '../../../api/getRestaurants';
 import { sendCuisinesToStore } from '../../../actions/cuisines';
 import './Cuisine.css';
+import { sendRestaurantsToStore } from '../../../actions/loadRestaurants';
 
 export class Cuisine extends Component {
-  constructor (props) {
-    super(props);
-  }
+  // constructor (props) {
+  //   super(props);
+  // }
 
   componentDidMount () {
     if (this.props.chosenCityID) {
@@ -31,13 +33,16 @@ export class Cuisine extends Component {
     const cuisines = await getCuisines(chosenCityID);
     this.props.loadCuisines(cuisines.cuisines);
   };
-//
-// {
-//   cuisine: {
-//     cuisine_id: 1,
-//     cuisine_name: 'American'
-//   }
-// }
+
+  storeRestaurants = async () => {
+    const cuisineIDs = this.props.availableCuisines.map((cuisine) => {
+      return cuisine.cuisine.cuisine_id;
+    });
+    const cityID = this.props.chosenCity.id;
+    const restaurants = await getRestaurants(cityID, cuisineIDs);
+    console.log(restaurants.restaurants)
+  };
+
 
   displayCuisines = () => {
     return this.props.availableCuisines.map((cuisine, index) => (
@@ -55,7 +60,7 @@ export class Cuisine extends Component {
   filterAvailableCuisines = (name) => {
     const availableCuisines = this.props.availableCuisines;
 
-    const remainingCuisines = availableCuisines.filter((cuisineObj, index) => {
+    const remainingCuisines = availableCuisines.filter((cuisineObj) => {
       return cuisineObj.cuisine.cuisine_name !== name;
     });
     this.props.loadCuisines(remainingCuisines);
@@ -68,18 +73,25 @@ export class Cuisine extends Component {
           <h2>What do you NOT want to eat?</h2>
         </section>
         <section className="cuisine-container">
-          {
-            Object.keys(this.props.chosenCity).length === 0 &&
-            this.displayNoLocations()
-          }
-          {
-            this.props.availableCuisines.length > 0 &&
-            this.displayCuisines()
-          }
-          {
-            Object.keys(this.props.chosenCity).length > 0 && this.props.availableCuisines.length === 0 &&
-            <Loading />
-          }
+          <section className="return-restaurants-container">
+            <NavLink to="/restaurants" key={`restaurant-nav`}>
+              <button
+                onClick={() => this.storeRestaurants()}
+                className='return-restaurants'>Return Restaurants</button>
+            </NavLink>
+          </section>
+            {
+              Object.keys(this.props.chosenCity).length === 0 &&
+              this.displayNoLocations()
+            }
+            {
+              this.props.availableCuisines.length > 0 &&
+              this.displayCuisines()
+            }
+            {
+              Object.keys(this.props.chosenCity).length > 0 && this.props.availableCuisines.length === 0 &&
+              <Loading />
+            }
         </section>
       </div>
     );
@@ -102,7 +114,8 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  loadCuisines: (cities) => dispatch(sendCuisinesToStore(cities))
+  loadCuisines: (cities) => dispatch(sendCuisinesToStore(cities)),
+  loadRestaurants: (restaurants) => dispatch(sendRestaurantsToStore(restaurants))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cuisine));

@@ -68,3 +68,20 @@ export const availableCuisines = [
     }
   }
 ];
+
+export const mockRestaurants = {
+  restaurants:
+    {
+      results_found: 7,
+      results_start: 0,
+      results_shown: 7,
+      restaurants:
+        [[Object],
+          [Object],
+          [Object],
+          [Object],
+          [Object],
+          [Object],
+          [Object]]
+    }
+};

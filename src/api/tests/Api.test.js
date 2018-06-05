@@ -1,10 +1,54 @@
-import { getCities } from '../getCities'
-import { getCuisines} from '../getCuisines';
+import { getCities } from '../getCities';
+import { getCuisines } from '../getCuisines';
+import { getRestaurants } from '../getRestaurants';
 import key from '../../apiKey';
-import { availableCuisines} from '../../mockData';
+import { availableCuisines, mockRestaurants } from '../../mockData';
 
 describe('API tests', () => {
-  describe('getCities', () => {
+
+  describe('getRestaurants Testing', () => {
+    let mockCityID;
+    let mockCuisineIDs;
+    let mockData;
+
+    beforeEach(() => {
+      mockCityID = 5172;
+      mockCuisineIDs = '233, 121';
+      mockData = {};
+
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        json: () => Promise.resolve(mockRestaurants)
+      }));
+    });
+    it('should call the fetch with correct params', async () => {
+      const mockOptions = {
+        method: 'GET',
+        headers: {
+          'user-key': key,
+          'Content-Type': 'application/json'
+        }
+      };
+      const expected = [`https://developers.zomato.com/api/v2.1/search?entity_id=${mockCityID}&entity_type=city&cuisines=${mockCuisineIDs}`, mockOptions];
+
+      await getRestaurants(mockCityID, mockCuisineIDs);
+
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
+    });
+    it('should return data after api call', async () => {
+      const result = await getRestaurants(mockCityID, mockCuisineIDs);
+      expect(result).toEqual(mockRestaurants);
+
+    });
+
+    it('should throw an error if the fetch fails ', async () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject(Error('failed fetching')));
+
+      const expected = Error('Failed to fetch restaurants. (error: failed fetching)');
+      expect(getRestaurants('asdf')).rejects.toEqual(expected);
+    });
+  });
+
+  describe('getCities Testing', () => {
     let mockData;
     beforeEach(() => {
       mockData = [{city: 'Newton, TX'}];
@@ -46,8 +90,7 @@ describe('API tests', () => {
     });
   });
 
-
-  describe('getCuisines', () => {
+  describe('getCuisines Testing', () => {
 
     beforeEach(() => {
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
@@ -76,7 +119,7 @@ describe('API tests', () => {
 
       const actual = await getCuisines(305);
 
-      expect(actual).toBe(availableCuisines)
+      expect(actual).toBe(availableCuisines);
 
     });
 
