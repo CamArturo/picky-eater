@@ -20,10 +20,12 @@
 .cuisine-container {
   display: flex;
   flex-wrap: wrap;
+  height: 100vh;
   .cuisine-btn {
     //width: 240px;
     width: 10%;
     min-height: 100px;
+    height: 100px;
     //height: 200px;
     display: flex;
     justify-content: center;
@@ -35,6 +37,7 @@
     h3 {
       //width: 124px;
       //height: 51px;
+      pointer-events: none;
 
       font-family: Catamaran, serif;
       font-style: italic;
