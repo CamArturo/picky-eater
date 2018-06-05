@@ -76,27 +76,30 @@ export class Cuisine extends Component {
           <h2>What do you NOT want to eat?</h2>
         </section>
         <section className="cuisine-container">
-          { this.props.availableCuisines.length > 0 &&
-            <div className="cuisine-info">
-              <p>Click to Remove the cuisines you do not want</p>
-              <section className="return-restaurants-container">
-                <NavLink to="/restaurants" key={`restaurant-nav`}>
-                  <button
-                    onClick={() => this.storeRestaurants()}
-                    className='return-restaurants'>Show me these Restaurants
-                  </button>
-                </NavLink>
-              </section>
-            </div>
+          {this.props.availableCuisines.length > 0 &&
+          <div className="cuisine-info">
+            <p>Click to Remove the cuisines you do not want</p>
+            <section className="return-restaurants-container">
+              <NavLink to="/restaurants" key={`restaurant-nav`}>
+                <button
+                  onClick={() => this.storeRestaurants()}
+                  className='return-restaurants'>Show me these Restaurants
+                </button>
+              </NavLink>
+            </section>
+          </div>
           }
+
           {
             Object.keys(this.props.chosenCity).length === 0 &&
             this.displayNoLocations()
           }
-          {
-            this.props.availableCuisines.length > 0 &&
-            this.displayCuisines()
-          }
+          <section className='cuisine-btn-container'>
+            {
+              this.props.availableCuisines.length > 0 &&
+              this.displayCuisines()
+            }
+          </section>
           {
             Object.keys(this.props.chosenCity).length > 0 && this.props.availableCuisines.length === 0 &&
             <Loading />

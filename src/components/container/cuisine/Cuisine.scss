@@ -20,12 +20,20 @@
 .cuisine-container {
   display: flex;
   flex-wrap: wrap;
-  p {
-    margin: 2rem auto 1rem;
-    text-align: center;
+  .cuisine-btn-container {
+    width: 100%;
+    display: -ms-flexbox;
+    height: 100vh;
+    //display: flex;
+    //-ms-flex-wrap: wrap;
+    //flex-wrap: wrap;
   }
   .cuisine-info {
     width: 100%;
+    p {
+      margin: 2rem auto 1rem;
+      text-align: center;
+    }
   }
   .return-restaurants-container {
     width: 100%;
@@ -59,9 +67,10 @@
     min-height: 100px;
     height: 100px;
     //height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+    float: left;
     border: 1px solid #cecece;
     &:hover {
       background-color: #cecece;

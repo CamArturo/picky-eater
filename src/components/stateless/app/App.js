@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Header from '../header/Header';
 import Home from '../home/Home';
 import LocationSearch from '../location/Location';
-import { Restaurant } from '../restaurants/Restaurant';
+import { Restaurant } from '../restaurants/Restaurants';
 import Cuisine from '../../container/cuisine/Cuisine';
 import { Route } from 'react-router';
 import './App.css';
-import Restaurants from '../restaurants/Restaurant';
+import Restaurants from '../restaurants/Restaurants';
 
 class App extends Component {
   render() {

@@ -26,7 +26,7 @@ describe('Cuisine page tests', () => {
     availableCuisines = mock.availableCuisines;
     chosenCity = mock.chosenCity;
 
-    wrapper = mount(<Cuisine
+    wrapper = shallow(<Cuisine
       chosenCityID={chosenCityID}
       getCuisines={getCuisines}
       sendCuisinesToStore={sendCuisinesToStore}

@@ -2,7 +2,7 @@
 // => aka the expected object.
 
 // dispatch is being called with correct action
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import { Locations } from './Locations';
 import React from 'react';
 import { mockLocations } from '../../../mockData';

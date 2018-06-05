@@ -6,8 +6,8 @@ import './Restaurants.css'
 export class Restaurants extends Component {
 
   displayRestaurants = () => {
-    return this.props.restaurants.map((restaurant) => (
-      <article>
+    return this.props.restaurants.map((restaurant, index) => (
+      <article key={`key${index}`}>
         <h2>{restaurant}</h2>
       </article>
     ));
@@ -31,11 +31,11 @@ export class Restaurants extends Component {
 }
 
 export const mapStateToProps = (state) => ({
-  restaurants: state.restaurants,
+  restaurants: state.restaurants
 });
 
 Restaurants.propTypes = {
-
+  restaurants: PropTypes.array.isRequired
 };
 
 export default connect(mapStateToProps, null)(Restaurants);
