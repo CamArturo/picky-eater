@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import Header from '../header/Header';
 import Home from '../home/Home';
 import LocationSearch from '../location/Location';
-import { Route } from 'react-router';
+import { Restaurant } from '../restaurants/Restaurant';
 import Cuisine from '../../container/cuisine/Cuisine';
+import { Route } from 'react-router';
 import './App.css';
+import Restaurants from '../restaurants/Restaurant';
 
 class App extends Component {
   render() {
@@ -14,6 +16,7 @@ class App extends Component {
         <Route exact path="/" component={Home}/>
         <Route exact path="/location" component={LocationSearch}/>
         <Route exact path="/cuisine" component={Cuisine}/>
+        <Route exact path="/Restaurants" component={Restaurants}/>
       </div>
     );
   }
