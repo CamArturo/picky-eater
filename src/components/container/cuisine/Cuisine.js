@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Loading from '../../stateless/loading/Loading';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { getCuisines } from '../../../api/getCuisines'
+import { getCuisines } from '../../../api/getCuisines';
 
 import { sendCuisinesToStore } from '../../../actions/cuisines';
 import './Cuisine.css';
@@ -13,7 +13,7 @@ export class Cuisine extends Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentDidMount () {
     if (this.props.chosenCityID) {
       this.storeCuisines(this.props.chosenCityID);
     }
@@ -31,13 +31,34 @@ export class Cuisine extends Component {
     const cuisines = await getCuisines(chosenCityID);
     this.props.loadCuisines(cuisines.cuisines);
   };
+//
+// {
+//   cuisine: {
+//     cuisine_id: 1,
+//     cuisine_name: 'American'
+//   }
+// }
 
   displayCuisines = () => {
     return this.props.availableCuisines.map((cuisine, index) => (
-      <button className="cuisine-btn" key={`key${index}`}>
+      <button
+        onClick={(event) => this.filterAvailableCuisines(event.target.name)}
+        className="cuisine-btn"
+        key={`key${index}`}
+        name={cuisine.cuisine.cuisine_name}
+      >
         <h3>{cuisine.cuisine.cuisine_name}</h3>
       </button>
     ));
+  };
+
+  filterAvailableCuisines = (name) => {
+    const availableCuisines = this.props.availableCuisines;
+
+    const remainingCuisines = availableCuisines.filter((cuisineObj, index) => {
+      return cuisineObj.cuisine.cuisine_name !== name;
+    });
+    this.props.loadCuisines(remainingCuisines);
   };
 
   render () {
@@ -53,11 +74,11 @@ export class Cuisine extends Component {
           }
           {
             this.props.availableCuisines.length > 0 &&
-              this.displayCuisines()
+            this.displayCuisines()
           }
           {
             Object.keys(this.props.chosenCity).length > 0 && this.props.availableCuisines.length === 0 &&
-            <Loading/>
+            <Loading />
           }
         </section>
       </div>
