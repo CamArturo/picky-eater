@@ -64,7 +64,6 @@ export class Cuisine extends Component {
           <section className="return-restaurants-container">
             <button className='return-restaurants'>Return Restaurants</button>
           </section>
-          {/*<section className="cuisines">*/}
             {
               Object.keys(this.props.chosenCity).length === 0 &&
               this.displayNoLocations()
@@ -77,7 +76,6 @@ export class Cuisine extends Component {
               Object.keys(this.props.chosenCity).length > 0 && this.props.availableCuisines.length === 0 &&
               <Loading />
             }
-          {/*</section>*/}
         </section>
       </div>
     );
