@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Loading from '../../stateless/loading/Loading';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import { getCuisines } from '../../../api/getCuisines';
 import { getRestaurants } from '../../../api/getRestaurants';
 import { sendCuisinesToStore } from '../../../actions/cuisines';
@@ -40,9 +40,11 @@ export class Cuisine extends Component {
     });
     const cityID = this.props.chosenCity.id;
     const restaurants = await getRestaurants(cityID, cuisineIDs);
-    console.log(restaurants.restaurants)
+    const restaurantNames = restaurants.restaurants.map((restaurant) => {
+      return restaurant.restaurant.name;
+    });
+    this.props.loadRestaurants(restaurantNames);
   };
-
 
   displayCuisines = () => {
     return this.props.availableCuisines.map((cuisine, index) => (
@@ -51,6 +53,7 @@ export class Cuisine extends Component {
         className="cuisine-btn"
         key={`key${index}`}
         name={cuisine.cuisine.cuisine_name}
+        title="Click to Remove"
       >
         <h3>{cuisine.cuisine.cuisine_name}</h3>
       </button>
@@ -73,25 +76,31 @@ export class Cuisine extends Component {
           <h2>What do you NOT want to eat?</h2>
         </section>
         <section className="cuisine-container">
-          <section className="return-restaurants-container">
-            <NavLink to="/restaurants" key={`restaurant-nav`}>
-              <button
-                onClick={() => this.storeRestaurants()}
-                className='return-restaurants'>Return Restaurants</button>
-            </NavLink>
-          </section>
-            {
-              Object.keys(this.props.chosenCity).length === 0 &&
-              this.displayNoLocations()
-            }
-            {
-              this.props.availableCuisines.length > 0 &&
-              this.displayCuisines()
-            }
-            {
-              Object.keys(this.props.chosenCity).length > 0 && this.props.availableCuisines.length === 0 &&
-              <Loading />
-            }
+          { this.props.availableCuisines.length > 0 &&
+            <div className="cuisine-info">
+              <p>Click to Remove the cuisines you do not want</p>
+              <section className="return-restaurants-container">
+                <NavLink to="/restaurants" key={`restaurant-nav`}>
+                  <button
+                    onClick={() => this.storeRestaurants()}
+                    className='return-restaurants'>Show me these Restaurants
+                  </button>
+                </NavLink>
+              </section>
+            </div>
+          }
+          {
+            Object.keys(this.props.chosenCity).length === 0 &&
+            this.displayNoLocations()
+          }
+          {
+            this.props.availableCuisines.length > 0 &&
+            this.displayCuisines()
+          }
+          {
+            Object.keys(this.props.chosenCity).length > 0 && this.props.availableCuisines.length === 0 &&
+            <Loading />
+          }
         </section>
       </div>
     );
