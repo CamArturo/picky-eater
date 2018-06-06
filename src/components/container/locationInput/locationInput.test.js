@@ -2,12 +2,11 @@ import React from 'react';
 import { LocationInput } from './LocationInput';
 import { shallow } from 'enzyme';
 import { getCities } from '../../../api/getCities';
-import * as mock from '../../../mockData';
 import { mapDispatchToProps } from './LocationInput';
 import { sendLocationsToStore } from '../../../actions/loadLocations'
-import { addChosenCity } from '../../../actions/chosenCity';
-
-
+import * as mock from '../../../mockData';
+import * as citiesFetch from '../../../api/getCities'
+jest.mock('../../../api/getCities');
 jest.mock('../../../api/getCuisines');
 // import { mockLocations } from '../../../mockData';
 
@@ -26,6 +25,10 @@ describe('Locations', () => {
     mockProps = {
       loadLocations: jest.fn()
     };
+
+    citiesFetch.getCities.mockImplementation(() => {
+      return mock.mockLocations
+    });
 
     // loadLocations = jest.fn();
     wrapper = shallow(
@@ -74,5 +77,9 @@ describe('Locations', () => {
     const expected = sendLocationsToStore(mock.mockLocations); // everything that is going to be called with
     expect(mockedDispatchToProps).toHaveBeenCalledWith(expected);
 
+  });
+  it('Calling StoreCities should call loadRestaurants ', async () => {
+    await wrapper.instance().storeCities();
+    expect(wrapper.instance().props.loadLocations).toHaveBeenCalled();
   });
 });

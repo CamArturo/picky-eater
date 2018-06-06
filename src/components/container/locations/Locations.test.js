@@ -8,6 +8,10 @@ import React from 'react';
 import { mockLocations } from '../../../mockData';
 import { mapStateToProps, mapDispatchToProps } from './Locations';
 import { addChosenCity } from '../../../actions/chosenCity';
+// import { getCities } from '../../../api/getCities';
+jest.mock('../../../api/getCities');
+import * as citiesFetch from '../../../api/getCities'
+
 
 describe('Locations', () => {
   let wrapper;
@@ -23,6 +27,10 @@ describe('Locations', () => {
     mockProps = {
       storeChosenCity: jest.fn()
     };
+
+    citiesFetch.getCities.mockImplementation(() => {
+      return
+    })
 
     wrapper = shallow(
       <Locations
@@ -52,17 +60,6 @@ describe('Locations', () => {
     // method that calls another method(action creator) that has an action (an object)
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
-  it('should fire storeChosenCity when a button is clicked', () => {
-    const mockedDispatchToProps = jest.fn();
-    const mappedProps = mapDispatchToProps(mockedDispatchToProps);
-    const chosenCity = 'Newton, IL';
-
-    mappedProps.storeChosenCity(chosenCity);
-
-    const expected = addChosenCity(chosenCity); // everything that is going to be called with
-    expect(mockedDispatchToProps).toHaveBeenCalledWith(expected);
-
-  });
   it('should only render buttons when there are more than 0 locations in store', () => {
     const mockLocations = [];
     const mockedDispatchToProps = jest.fn();
@@ -77,6 +74,17 @@ describe('Locations', () => {
     };
     const wrapper3 = shallow(<Locations {...mockProps} locations={mockState3.locations} storeChosenCity={jest.fn()} />);
     expect(wrapper3).toMatchSnapshot();
+  });
+  it('should fire storeChosenCity when a button.location-btn is clicked', () => {
+    const mockedDispatchToProps = jest.fn();
+    const mappedProps = mapDispatchToProps(mockedDispatchToProps);
+    const chosenCity = 'Newton, IL';
+
+    mappedProps.storeChosenCity(chosenCity, 5172);
+
+    const expected = addChosenCity(chosenCity, 5172); // everything that is going to be called with
+    expect(mockedDispatchToProps).toHaveBeenCalledWith(expected);
+
   });
 });
 
