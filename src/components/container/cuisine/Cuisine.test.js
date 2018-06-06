@@ -1,12 +1,11 @@
 import React from 'react';
 import { Cuisine, mapDispatchToProps } from './Cuisine';
-import { shallow, mount } from 'enzyme';
-import * as mock from '../../../mockData';
-// import { getCuisines } from '../../../api/getCuisines'
-// import * as apiCalls from '../../../api/getCuisines'
-jest.mock('../../../api/getCuisines');
-import { sendCuisinesToStore } from '../../../actions/cuisines';
+import { shallow } from 'enzyme';
 import { mockListRestaurants } from '../../../mockData';
+jest.mock('../../../api/getCuisines');
+jest.mock('../../../api/getRestaurants');
+import * as mock from '../../../mockData';
+import * as restaurantFetch from '../../../api/getRestaurants'
 
 describe('Cuisine page tests', () => {
 
@@ -26,6 +25,9 @@ describe('Cuisine page tests', () => {
     loadCuisines = jest.fn();
     availableCuisines = mock.availableCuisines;
     chosenCity = mock.chosenCity;
+    restaurantFetch.getRestaurants.mockImplementation(() => {
+      return mock.mockRestaurant
+    });
 
     wrapper = shallow(<Cuisine
       chosenCityID={chosenCityID}
@@ -34,8 +36,8 @@ describe('Cuisine page tests', () => {
       loadCuisines={loadCuisines}
       availableCuisines={availableCuisines}
       chosenCity={chosenCity}
-    />);
-
+      loadRestaurants = {jest.fn()}
+    />)
   });
 
   it('Should match the snapshot', () => {
@@ -69,7 +71,7 @@ describe('Cuisine page tests', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(mockAction);
   });
-  it('call dispatch with sendRestaurantsToStore with correct params (restaurants)', () => {
+  it('calls dispatch with sendRestaurantsToStore with correct params (restaurants)', () => {
     const mockDispatch = jest.fn();
     const mockAction = {
       type: 'STORE_RESTAURANTS',
@@ -102,5 +104,10 @@ describe('Cuisine page tests', () => {
     wrapper.find('.cuisine-btn').at(0).simulate('click', mockEvent);
 
     expect(spy).toHaveBeenCalled();
-  })
+  });
+  it('storeRestaurants should call loadRestaurants actions with correct params', async () => {
+    await wrapper.instance().storeRestaurants();
+
+    expect(wrapper.instance().props.loadRestaurants).toHaveBeenCalledWith(["Dairy Queen"] );
+  });
 });
