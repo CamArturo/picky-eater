@@ -95,3 +95,14 @@ export const mockListRestaurants = [
   'Lone Star Steakhouse & Saloon',
   'Gray\'s'
 ];
+
+export const mockRestaurant =
+  {
+    restaurants: [
+      {
+        restaurant: {
+          name: 'Dairy Queen'
+        }
+      }
+    ]
+  };

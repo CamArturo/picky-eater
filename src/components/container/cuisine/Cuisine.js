@@ -66,6 +66,7 @@ export class Cuisine extends Component {
     const remainingCuisines = availableCuisines.filter((cuisineObj) => {
       return cuisineObj.cuisine.cuisine_name !== cuisineName;
     });
+
     this.props.loadCuisines(remainingCuisines);
   };
 

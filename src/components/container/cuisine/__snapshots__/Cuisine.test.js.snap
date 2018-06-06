@@ -36,6 +36,7 @@ ShallowWrapper {
     chosenCityID={5172}
     getCuisines={[Function]}
     loadCuisines={[Function]}
+    loadRestaurants={[Function]}
     sendCuisinesToStore={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
