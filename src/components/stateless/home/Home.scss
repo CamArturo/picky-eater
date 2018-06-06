@@ -25,7 +25,7 @@
     // 0956B2
   }
   .infographics {
-    justify-content: space-around;
+    //justify-content: space-around;
     margin: 20px 0 0 0;
     padding-bottom: 100px;
   }
@@ -65,7 +65,16 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
-
+  .discover-info {
+    .infographics {
+      display: block;
+    }
+    .icon-container {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
 
 /* Custom, iPhone Retina */

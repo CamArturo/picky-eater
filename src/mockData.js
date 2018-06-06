@@ -95,8 +95,3 @@ export const mockListRestaurants = [
   'Lone Star Steakhouse & Saloon',
   'Gray\'s'
 ];
-
-export const mockListRestaurantsObj = {
-  'restaurants': {'restaurants': ['Yesterday\'s Pub & Dining', 'Olde Tyme Steakhaus', 'Brew City Pub & Grill', 'Holiday Restaurant', 'Richard\'s Farm Restaurant', 'Lone Star Steakhouse & Saloon', 'Gray\'s']},
-  'type': 'STORE_RESTAURANTS'
-};

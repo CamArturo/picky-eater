@@ -19,8 +19,6 @@
 
 .restaurant-container {
   min-height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
   article {
     width: 20%;
     height: 100px;
@@ -30,5 +28,8 @@
     padding: 1rem;
     text-align: center;
     background-color: #c4c4c4;
+    border: 1px solid #0956B2;
+    float: left;
+    overflow: hidden;
   }
 }

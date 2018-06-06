@@ -60,11 +60,11 @@ export class Cuisine extends Component {
     ));
   };
 
-  filterAvailableCuisines = (name) => {
+  filterAvailableCuisines = (cuisineName) => {
     const availableCuisines = this.props.availableCuisines;
 
     const remainingCuisines = availableCuisines.filter((cuisineObj) => {
-      return cuisineObj.cuisine.cuisine_name !== name;
+      return cuisineObj.cuisine.cuisine_name !== cuisineName;
     });
     this.props.loadCuisines(remainingCuisines);
   };
