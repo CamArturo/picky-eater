@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Loading from '../../stateless/loading/Loading';
 import './Restaurants.css'
 
 export class Restaurants extends Component {
@@ -25,8 +26,8 @@ export class Restaurants extends Component {
         </section>
         <section className="restaurant-container">
           {
-            this.props.restaurants.length > 0 &&
-            this.displayRestaurants()
+            this.props.restaurants.length > 0 ?
+            this.displayRestaurants() : <Loading/>
           }
         </section>
       </div>

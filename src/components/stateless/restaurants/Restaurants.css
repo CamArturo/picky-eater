@@ -42,5 +42,7 @@
     content: "";
     display: table;
     clear: both; }
+  .restaurant-container .loading-gif {
+    background-color: transparent; }
 
 /*# sourceMappingURL=Restaurants.css.map */
