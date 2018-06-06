@@ -20,7 +20,6 @@
   text-align: center;
   color: #353131; }
 .discover-info .infographics {
-  justify-content: space-around;
   margin: 20px 0 0 0;
   padding-bottom: 100px; }
 .discover-info .icon-container {
@@ -42,6 +41,13 @@
 /* Medium Devices, Desktops */
 /* Small Devices, Tablets */
 /* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .discover-info .infographics {
+    display: block; }
+  .discover-info .icon-container {
+    display: block;
+    width: 100%;
+    text-align: center; } }
 /* Custom, iPhone Retina */
 
 /*# sourceMappingURL=Home.css.map */

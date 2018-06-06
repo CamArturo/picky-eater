@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import './Restaurants.css'
 
 export class Restaurants extends Component {
+  constructor (props) {
+    super(props);
+
+  }
 
   displayRestaurants = () => {
     return this.props.restaurants.map((restaurant, index) => (

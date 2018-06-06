@@ -2,8 +2,6 @@ import React from 'react';
 import { Restaurants, mapStateToProps } from './Restaurants';
 import { shallow } from 'enzyme';
 import { mockListRestaurants } from '../../../mockData';
-import * as mock from '../../../mockData';
-import { mapDispatchToProps } from '../../container/cuisine/Cuisine';
 
 describe('Restaurants page tests', () => {
 
@@ -12,7 +10,7 @@ describe('Restaurants page tests', () => {
 
   beforeEach(() => {
     mockState = {
-      restaurants: mockListRestaurants,
+      restaurants: mockListRestaurants
     };
 
     wrapper = shallow(
@@ -23,8 +21,12 @@ describe('Restaurants page tests', () => {
   });
 
   it('Should match the snapshot', () => {
+    const appComponent = shallow(
+      <Restaurants
+        restaurants={mockListRestaurants}
+    />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(appComponent).toMatchSnapshot();
   });
 
   it('should mapStateToProps', () => {

@@ -42,11 +42,11 @@
       line-height: 37px;
       letter-spacing: 2px;
       color: #fff;
-      background-color: #0956B2;
+      background-color: #0956b2;
       border: none;
       margin: 0; }
       .cuisine-container .return-restaurants-container .return-restaurants:hover {
-        background-color: #1468CC;
+        background-color: #1468cc;
         color: #fff;
         cursor: pointer; }
   .cuisine-container .cuisine-btn {
@@ -81,6 +81,9 @@
 /* Medium Devices, Desktops */
 /* Small Devices, Tablets */
 /* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .cuisine-container .cuisine-btn {
+    width: 100%; } }
 /* Custom, iPhone Retina */
 
 /*# sourceMappingURL=Cuisine.css.map */
