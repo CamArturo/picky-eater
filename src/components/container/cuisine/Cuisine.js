@@ -21,14 +21,6 @@ export class Cuisine extends Component {
     }
   }
 
-  displayNoLocations = () => {
-    return (
-      <section className="no-locations">
-        <p>No Locations Chosen</p>
-      </section>
-    );
-  };
-
   storeCuisines = async (chosenCityID) => {
     const cuisines = await getCuisines(chosenCityID);
     this.props.loadCuisines(cuisines.cuisines);
@@ -93,7 +85,9 @@ export class Cuisine extends Component {
 
           {
             Object.keys(this.props.chosenCity).length === 0 &&
-            this.displayNoLocations()
+            <section className="no-locations">
+              <p>No Locations Chosen</p>
+            </section>
           }
           <section className='cuisine-btn-container'>
             {
