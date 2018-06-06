@@ -24,9 +24,6 @@
     width: 100%;
     display: -ms-flexbox;
     height: 100vh;
-    //display: flex;
-    //-ms-flex-wrap: wrap;
-    //flex-wrap: wrap;
   }
   .cuisine-info {
     width: 100%;
@@ -62,29 +59,22 @@
     }
   }
   .cuisine-btn {
-    //width: 240px;
-    width: 10%;
+    width: 20%;
     min-height: 100px;
     height: 100px;
-    //height: 200px;
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
     float: left;
     border: 1px solid #cecece;
+
     &:hover {
       background-color: #cecece;
     }
     h3 {
-      //width: 124px;
-      //height: 51px;
       pointer-events: none;
 
       font-family: Catamaran, serif;
       font-style: italic;
       font-weight: normal;
       line-height: 150%;
-      //font-size: 2rem;
       letter-spacing: 0.04em;
 
       color: #000;

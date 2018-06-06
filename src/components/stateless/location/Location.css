@@ -52,7 +52,10 @@
       background: #1468cc; }
 .location-container .locations-container {
   padding-bottom: 60px;
-  min-height: 100vh; }
+  margin: 50px 0 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
   .location-container .locations-container button {
     background-color: #0956B2;
     width: 300px;

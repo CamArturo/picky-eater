@@ -23,9 +23,6 @@
   flex-wrap: wrap;
   justify-content: center;
   article {
-    //padding: 1rem;
-    //text-align: center;
-    //background-color: #c4c4c4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,5 +47,8 @@
     content: "";
     display: table;
     clear: both;
+  }
+  .loading-gif {
+    background-color: transparent;
   }
 }
