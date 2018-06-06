@@ -28,7 +28,7 @@ describe('API tests', () => {
           'Content-Type': 'application/json'
         }
       };
-      const expected = [`https://developers.zomato.com/api/v2.1/search?entity_id=${mockCityID}&entity_type=city&cuisines=${mockCuisineIDs}`, mockOptions];
+      const expected = [`https://developers.zomato.com/api/v2.1/search?entity_id=${mockCityID}&entity_type=city&cuisines=${mockCuisineIDs}&sort=rating`, mockOptions];
 
       await getRestaurants(mockCityID, mockCuisineIDs);
 

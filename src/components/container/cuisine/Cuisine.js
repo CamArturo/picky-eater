@@ -32,7 +32,6 @@ export class Cuisine extends Component {
     });
     const cityID = this.props.chosenCity.id;
     const restaurants = await getRestaurants(cityID, cuisineIDs);
-    console.log(restaurants)
     const restaurantNames = restaurants.restaurants.map((restaurant) => {
       return restaurant.restaurant.name;
     });
