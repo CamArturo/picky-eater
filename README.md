@@ -6,8 +6,6 @@
 Picky Eater is a ReactJS app, with asynchronous javascript, state management managed by Redux. It allows the 
 user to sort restaurants in your city by process of elimination. It utilizes Zomato API and fetch for the API request.
 
-### Turing School of Software & Design Front-end Engineering project - Mod 3 - Personal Project
-
 ## *Project Goals*
 
 * Fetching APIs
