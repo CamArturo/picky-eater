@@ -3,7 +3,7 @@
 
 ## Synopsis
 
-Picky Eater is a ReactJS app, with asynchronous javascript, state management managed by Redux. It allows the 
+Picky Eater is a ReactJS app, with asynchronous JavaScript, state management managed by Redux. It allows the 
 user to sort restaurants in your city by process of elimination. It utilizes Zomato API and fetch for the API request.
 
 ## *Project Goals*
